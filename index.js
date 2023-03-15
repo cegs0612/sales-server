@@ -5,7 +5,6 @@ import usuariosModel from "./models/usuarios.js";
 import sucursalModel from "./models/sucursales.js";
 import productoModel from "./models/productos.js";
 import ventaModel from "./models/ventas.js";
-require("dotenv").config();
 
 
 const app = express();
@@ -225,4 +224,4 @@ app.get("/login", (req,res)=>{
     })
 })
 
-app.listen(process.env.PORT,()=>{console.log("Conected to port "+PORT) })
+app.listen(PORT,()=>{console.log("Conected to port "+PORT) })

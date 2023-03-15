@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // conexión a base de datos
-mongoose.connect("mongodb+srv://all:5P9NvJXQn6EHzhG@cluster0.1focmhq.mongodb.net/SistemaVentas?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://all:todos0612@cluster0.1focmhq.mongodb.net/SistemaVentas?retryWrites=true&w=majority",{useNewUrlParser: true});
 
 //manejo de sucursales
 app.post("/insertSucursal", async(req,res)=>{
@@ -61,7 +61,7 @@ app.delete("/deleteSucursal",(req,res)=>{
     .catch((error)=>{res.send(error)});
 });
 //manejo de perfiles
-app.get("/readPerfiles",(req,res)=>{
+app.get("/  ",(req,res)=>{
     usuariosModel.find({},(err,result)=>{err? res.send(err):res.send(result)
     }).sort({usuario:1});
 });
@@ -222,6 +222,6 @@ app.get("/login", (req,res)=>{
             res.send(result);
         }
     })
-})
+}) 
 
 app.listen(PORT,()=>{console.log("Conected to port "+PORT) })

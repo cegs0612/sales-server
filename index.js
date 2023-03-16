@@ -5,6 +5,7 @@ import usuariosModel from "./models/usuarios.js";
 import sucursalModel from "./models/sucursales.js";
 import productoModel from "./models/productos.js";
 import ventaModel from "./models/ventas.js";
+
 require('dotenv').config();
 
 const app = express();
@@ -60,7 +61,7 @@ app.delete("/deleteSucursal",(req,res)=>{
     .catch((error)=>{res.send(error)});
 });
 //manejo de perfiles
-app.get("/  ",(req,res)=>{
+app.get("/",(req,res)=>{
     usuariosModel.find({},(err,result)=>{err? res.send(err):res.send(result)
     }).sort({usuario:1});
 });

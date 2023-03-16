@@ -166,7 +166,6 @@ app.get("/readVentas",(req,res)=>{
 });
 app.post("/insertVenta",async(req,res)=>{
     const venta = req.body;
-    console.log(venta)
     const newVenta = new ventaModel({
         usuario: venta.usuario,
         sucursal: venta.sucursal,

@@ -5,15 +5,14 @@ import usuariosModel from "./models/usuarios.js";
 import sucursalModel from "./models/sucursales.js";
 import productoModel from "./models/productos.js";
 import ventaModel from "./models/ventas.js";
-
+require('dotenv').config();
 
 const app = express();
-const PORT= 3001;
 app.use(cors());
 app.use(express.json());
 
 // conexión a base de datos
-mongoose.connect("mongodb+srv://all:todos0612@cluster0.1focmhq.mongodb.net/SistemaVentas?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.1focmhq.mongodb.net/SistemaVentas?retryWrites=true&w=majority`,{useNewUrlParser: true});
 
 //manejo de sucursales
 app.post("/insertSucursal", async(req,res)=>{
@@ -224,4 +223,4 @@ app.get("/login", (req,res)=>{
     })
 }) 
 
-app.listen(PORT,()=>{console.log("Conected to port "+PORT) })
+app.listen(process.env.PORT||3001,()=>{console.log("Conected")})

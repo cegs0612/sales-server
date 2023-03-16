@@ -5,8 +5,8 @@ import usuariosModel from "./models/usuarios.js";
 import sucursalModel from "./models/sucursales.js";
 import productoModel from "./models/productos.js";
 import ventaModel from "./models/ventas.js";
-
-require('dotenv').config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 app.use(cors());
